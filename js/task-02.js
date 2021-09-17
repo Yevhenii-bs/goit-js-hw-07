@@ -14,6 +14,9 @@ const ingredients = [
 
 ingredients.map((el) => {
   const li = document.createElement("li");
+
   li.appendChild(document.createTextNode(el));
+  
   document.getElementById("ingredients").appendChild(li)
 });
+

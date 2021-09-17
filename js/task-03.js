@@ -19,17 +19,18 @@ const images = [
   },
 ];
 
-const gallery = document.querySelector('#gallery')
 
-const elements = images.flatMap((a,b) => {
-    const imgEl = document.createElement('img');
-    imgEl.url = a.url;
-    imgEl.alt = b.alt;
+const ulEl = document.querySelector('#gallery');
 
-    
-    const itemListEl = document.createElement('li')
-    itemListEl.appendChild(imgEl);
-    gallery.appendChild(itemListEl);
+images.forEach(el => {
+  ulEl.insertAdjacentHTML(
+    'afterbegin',
+    `<li><img src = "${el.url}" alt = "${el.alt}"  width = "150" height = "100" /></li>`,
+  );
+});
 
-    gallery.insertAdjacentElement('afterbegin', itemListEl)
-})
+ulEl.setAttribute("style", "list-style-type:none; display: flex;");
+
+
+
+
