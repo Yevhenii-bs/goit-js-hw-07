@@ -12,6 +12,21 @@ const inputElRef = document.querySelector('#font-size-control');
 
 inputElRef.addEventListener('input', () => {
     const size = inputElRef.value;
-    
+
     textElRef.style.fontSize = size + "px";
 });
+
+
+
+function numberGenerator() {
+  // Local “free” variable that ends up within the closure
+  var num = 1;
+  function checkNumber() { 
+    console.log(num);
+  }
+  num++;
+  return checkNumber;
+}
+
+var number = numberGenerator();
+number(); // 2

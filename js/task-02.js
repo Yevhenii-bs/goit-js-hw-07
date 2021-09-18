@@ -12,11 +12,15 @@ const ingredients = [
 ];
 
 
-ingredients.map((el) => {
-  const li = document.createElement("li");
+// ingredients.map((el) => {
+//   const li = document.createElement("li");
 
-  li.appendChild(document.createTextNode(el));
+//   li.appendChild(document.createTextNode(el));
   
-  document.getElementById("ingredients").appendChild(li)
-});
+//   document.getElementById("ingredients").appendChild(li)
+// });
 
+const ul = document.querySelector("#ingredients");
+const list = ingredients.reduce((str, item) =>
+  str + `<li>${item}</li>`, '');
+ul.innerHTML = list;
