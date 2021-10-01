@@ -22,17 +22,27 @@
 //     console.log(`Количество элементов: ${itemsLength}`);
 // });
 
-const ul = document.querySelector('#categories');
-const countOfChildren = ul.children.length;
-console.log(`В списке ${countOfChildren} категории.`);
+// const ul = document.querySelector('#categories');
+// const countOfChildren = ul.children.length;
+// console.log(`В списке ${countOfChildren} категории.`);
 
-const li = ul.children;
-console.log("li: ", li); 
+// const li = ul.children;
+// console.log("li: ", li); 
 
-for (let i = 0; i < li.length; i++) {
-  const childrenOfLi = li[i].children;
-  const textContent = childrenOfLi[0].textContent;
-  console.log("Категория: ", textContent);
-  const countOfChild = childrenOfLi[1].children.length;
-  console.log("Количество элементов: ", countOfChild);
-}
+// for (let i = 0; i < li.length; i++) {
+//   const childrenOfLi = li[i].children;
+//   const textContent = childrenOfLi[0].textContent;
+//   console.log("Категория: ", textContent);
+//   const countOfChild = childrenOfLi[1].children.length;
+//   console.log("Количество элементов: ", countOfChild);
+// }
+
+
+const itemsRef = document.querySelectorAll('.item');
+console.log(`В списке ${itemsRef.length} категории`);
+itemsRef.forEach(el => {
+const h2 = el.querySelector('h2');
+const elItems = el.querySelectorAll('li');
+    console.log(`Категория: ${h2.textContent} 
+Количество элементов: ${elItems.length}`);
+});

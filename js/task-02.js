@@ -20,7 +20,19 @@ const ingredients = [
 //   document.getElementById("ingredients").appendChild(li)
 // });
 
-const ul = document.querySelector("#ingredients");
-const list = ingredients.reduce((str, item) =>
-  str + `<li>${item}</li>`, '');
-ul.innerHTML = list;
+// const ul = document.querySelector("#ingredients");
+// const list = ingredients.reduce((str, item) =>
+//   str + `<li>${item}</li>`, '');
+// ul.innerHTML = list;
+
+const ingredientsList = document.querySelector('#ingredients')
+console.log(ingredientsList);
+
+const ingredientsItem = ingredients.map(el => {
+    const item = document.createElement('li');
+    item.textContent = el;
+
+    return item;
+});
+
+ingredientsList.append(...ingredientsItem);
